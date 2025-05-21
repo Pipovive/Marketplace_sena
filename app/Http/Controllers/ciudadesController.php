@@ -3,16 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Ciudad;
+
 
 class ciudadesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
-        //
+          $data = Ciudad::all(); 
+        // dd($data ->toArray());
+
+        return view('ciudades.index', compact('data'));
     }
+
 
     /**
      * Show the form for creating a new resource.

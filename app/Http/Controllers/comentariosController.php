@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Comentario;
 
 class comentariosController extends Controller
 {
@@ -11,7 +12,9 @@ class comentariosController extends Controller
      */
     public function index()
     {
-        //
+        $data = Comentario::all();
+
+        return view('comentarios.index', compact('data'));
     }
 
     /**

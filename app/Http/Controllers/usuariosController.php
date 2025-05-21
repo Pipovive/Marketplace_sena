@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Usuario;
 
 class usuariosController extends Controller
 {
@@ -11,8 +12,13 @@ class usuariosController extends Controller
      */
     public function index()
     {
-        //
-    }
+       
+          $data = Usuario::all(); 
+        // dd($data ->toArray());
+
+        return view('usuarios.index', compact('data'));
+    }//
+    
 
     /**
      * Show the form for creating a new resource.
