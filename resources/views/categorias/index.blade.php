@@ -11,14 +11,18 @@
       <thead>
         <tr>
           <th scope="col">Nombre</th>
+          <th scope="col">URL</th>
+          <th scope="col">Descripcion</th>
           <th scope="col">Estado</th>
-          <th scope="col">Acciones</th>
+          <th scope="col">Imagenes</th>
         </tr>
       </thead>
       <tbody>
         @foreach ( $data as $categoria)
         <tr>
           <td>{{ $categoria->nombre }}</td>
+          <td>{{ $categoria->slug }}</td>
+          <td>{{ $categoria->descripcion }}</td>
           <td>{{ $categoria->estado }}</td>
           <td></td>
         </tr>
@@ -26,4 +30,92 @@
        @endforeach
     </table>
 @endsection
+
+@section('btn')
+ <div class="modal modal-blur fade" id="modal-report" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Nuevo</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <form id="categoria-form" action="{{ route('categorias.store') }}" method="POST" enctype="multipart/form-data">
+              @csrf
+              <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" name="nombre" placeholder="Ej: Camisas" id="nombre">
+              </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label col-lg-6">Slug</label>
+                  <input type="text" class="form-control" name="slug" id="slug">
+                </div>  
+
+                <div class="col-md-6 mb-3">
+                  <label class="form-label col-lg-6">Imagen</label>
+                  <input type="file" class="form-control" name="imagen" accept="image/*">
+                </div>  
+              
+            </div>
+
+            <div class="mb-3">
+                  <div>
+                    <label class="form-label">Descripcion</label>
+                    <textarea class="form-control" rows="3" name="descripcion"></textarea>
+                  </div>
+            </div>
+            </form>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-link link-secondary" data-bs-dismiss="modal">
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary ms-auto" id="btn-modal" form="categoria-form">
+              Enviar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+@endsection
+
+@section('script')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const nombreInput = document.getElementById('nombre');
+  const slugInput = document.getElementById('slug');
   
+  nombreInput.addEventListener('input', function() {
+    // Convertir a minúsculas
+    let slug = nombreInput.value.toLowerCase();
+    
+    // Reemplazar caracteres especiales y espacios
+    slug = slug
+      .replace(/[áàäâã]/g, 'a')
+      .replace(/[éèëê]/g, 'e')
+      .replace(/[íìïî]/g, 'i')
+      .replace(/[óòöôõ]/g, 'o')
+      .replace(/[úùüû]/g, 'u')
+      .replace(/ñ/g, 'n')
+      .replace(/[^\w\s-]/g, '') // Eliminar caracteres no alfanuméricos
+      .replace(/[\s_-]+/g, '-') // Reemplazar espacios y guiones por un solo guión
+      .replace(/^-+|-+$/g, ''); // Eliminar guiones al inicio y final
+    
+    slugInput.value = slug;
+  });
+  
+  // Opcional: Permitir edición manual del slug pero manteniendo formato válido
+  slugInput.addEventListener('input', function() {
+    let slug = slugInput.value.toLowerCase();
+    slug = slug.replace(/[^\w-]/g, ''); // Solo permitir letras, números y guiones
+    slugInput.value = slug;
+  });
+});
+</script>
+@endsection
+
+

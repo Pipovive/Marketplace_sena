@@ -7,6 +7,7 @@
     <title>Blank page - Tabler - Premium and Open Source dashboard template with responsive and high quality UI.</title>
     <!-- CSS files -->
     <link href="./dist/css/tabler.min.css?1692870487" rel="stylesheet"/>
+    
     <link href="./dist/css/tabler-flags.min.css?1692870487" rel="stylesheet"/>
     <link href="./dist/css/tabler-payments.min.css?1692870487" rel="stylesheet"/>
     <link href="./dist/css/tabler-vendors.min.css?1692870487" rel="stylesheet"/>
@@ -169,6 +170,7 @@
                     <span class="nav-link-title">
                       Home
                     </span>
+                    
                   </a>
                 </li>
                
@@ -182,6 +184,7 @@
                     </span>
                   </a>
                 </li>
+                
 
                 <li class="nav-item">
                   <a class="nav-link" href="{{'comentarios'}}" >
@@ -193,32 +196,50 @@
                     </span>
                   </a>
                 </li>
-              
-                
-                
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#navbar-help" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
-                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/lifebuoy -->
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M15 15l3.35 3.35" /><path d="M9 15l-3.35 3.35" /><path d="M5.65 5.65l3.35 3.35" /><path d="M18.35 5.65l-3.35 3.35" /></svg>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('ciudades.index') }}" >
+                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/checkbox -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 11l3 3l8 -8" /><path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" /></svg>
                     </span>
                     <span class="nav-link-title">
-                      Configuracion
+                      Ciudad
                     </span>
                   </a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{'ciudades'}}" rel="noopener">
-                      Ciudad
-                    </a>
-                    <a class="dropdown-item" href="{{'categorias'}}">
-                      Categorias
-                    </a>
-                    <a class="dropdown-item" href="{{'usuarios'}}">
-                      Usuarios
-                    </a>
-                    
-                    
-                  </div>
                 </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('categorias.index') }}" >
+                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/checkbox -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 11l3 3l8 -8" /><path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" /></svg>
+                    </span>
+                    <span class="nav-link-title">
+                      Categorías
+                    </span>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('usuarios.index') }}" >
+                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/checkbox -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 11l3 3l8 -8" /><path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" /></svg>
+                    </span>
+                    <span class="nav-link-title">
+                      Usuarios
+                    </span>
+                  </a>
+                </li>
+            
+              <!-- <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="configDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Configuración
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="configDropdown">
+                      <li><a class="dropdown-item" href="{{ route('ciudades.index') }}">Ciudad</a></li>
+                      <li><a class="dropdown-item" href="{{ route('categorias.index') }}">Categorías</a></li>
+                      <li><a class="dropdown-item" href="{{ route('usuarios.index') }}">Usuarios</a></li>
+                  </ul>
+              </li> -->
               </ul>
               <div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
                 <form action="./" method="get" autocomplete="off" novalidate>
@@ -246,7 +267,26 @@
 
         <div class="page-body container-xl">
 
-          @yield('content')
+         
+          <div class="btn-list">
+                  <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-report">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+                    Nuevo
+          <!-- Elimina la inclusión duplicada de Bootstrap CSS y JS, y asegúrate de que solo se incluya una versión de Bootstrap JS después de jQuery (si es necesario) -->
+          <!-- Si necesitas jQuery para algún plugin, inclúyelo antes de Bootstrap JS -->
+          <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                  </a>
+                  <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+                  </a>
+            </div>
+        
+        @yield('btn')
+
+        @yield('content')
   
         </div>
         <footer class="footer footer-transparent d-print-none">
@@ -286,8 +326,13 @@
       </div>
     </div>
     <!-- Libs JS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Bundle JS (incluye Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Tabler Core -->
     <script src="./dist/js/tabler.min.js?1692870487" defer></script>
     <script src="./dist/js/demo.min.js?1692870487" defer></script>
+    @yield('script')
   </body>
 </html>
