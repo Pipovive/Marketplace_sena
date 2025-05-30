@@ -8,11 +8,9 @@ use App\Models\Ciudad;
 
 class ciudadesController extends Controller
 {
-    
     public function index()
     {
-          $data = Ciudad::all(); 
-        // dd($data ->toArray());
+        $data = Ciudad::all(); // <- Agrega esta línea
 
         return view('ciudades.index', compact('data'));
     }
@@ -23,7 +21,7 @@ class ciudadesController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
